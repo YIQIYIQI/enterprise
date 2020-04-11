@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>Sales Prediction</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  
+</head>
+
+<body style="background: #d6eaf8;">
+ <div class="login">
+	<h2 style="color: #2c3e50 ">Prediction System</h2>
+
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('predict')}}"method="post">
+    	<input type="text" name="OverallQual" placeholder="OverallQual" required="required" />
+        <input type="text" name="GrLivArea" placeholder="GrLivArea" required="required" />
+		<input type="text" name="GarageCars" placeholder="GarageCars" required="required" />
+		<input type="text" name="GarageArea" placeholder="GarageArea" required="required" />
+		<input type="text" name="TotalBsmtSF" placeholder="TotalBsmtSF" required="required" />
+		<input type="text" name="1stFlrSF" placeholder="1stFlrSF" required="required" />
+		<input type="text" name="FullBath" placeholder="FullBath" required="required" />
+		<input type="text" name="TotRmsAbvGrd" placeholder="TotRmsAbvGrd" required="required" />
+		<input type="text" name="YearBuilt" placeholder="YearBuilt" required="required" />
+        <button type="submit" class="btn btn-primary btn-block btn-large">Predict Price</button>
+    </form>
+ </div>
+   <br>
+   <br>
+
+
+<div>
+   <h1 style="color: #2c3e50 ">{{ prediction_text }}</h1>
+
+</div>
+ <br>
+   <br> <br>
+   <br> <br>
+   <br>
+
+</body>
+</html>
